@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Rune : MonoBehaviour
 {
+    public float moveSpeed;
+    public int runeType;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
