@@ -3,13 +3,17 @@ using UnityEngine;
 
 public class CarouselController : MonoBehaviour
 {
+    [Header("Rune Settings")]
     [SerializeField] private int[] levelRunes;
     [SerializeField] private Vector2 runeSpawnPoint;
     [SerializeField] private float runeSpawnInterval;
     [SerializeField] private float runeMoveSpeed;
+    [SerializeField] private int runesPerRotation;
+    [Header("Drag Settings")]
     [SerializeField] private GameObject[] Enemies;
     [SerializeField] private GameObject runePrefab;
-    [SerializeField] private int runesPerRotation;
+    
+    // Private variables
     private int[] enemyRunes;
     private List<int> currentRotation;
     private int currentRuneIndex;
