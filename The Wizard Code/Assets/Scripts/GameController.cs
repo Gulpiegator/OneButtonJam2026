@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
         Instance = this;
         Controller = GetComponent<CharacterController>();
