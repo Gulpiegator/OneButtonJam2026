@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using System;
+using System.Collections;
 
 public class GameController : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameController : MonoBehaviour
     #region Scene Manager
     public bool sceneChangeEnabled;
     public string nextSceneName;
+    public Animator fadeAnimator;
+    public float fadeDuration = 1f;
     #endregion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -45,6 +48,13 @@ public class GameController : MonoBehaviour
 
     private void LoadNextScene()
     {
+        fadeAnimator.Play("FadeToBlack");
+        StartCoroutine(DelayFade());
+    }
+
+    IEnumerator DelayFade()
+    {
+        yield return new WaitForSeconds(fadeDuration);
         SceneManager.LoadScene(nextSceneName);
     }
 }
