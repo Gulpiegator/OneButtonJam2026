@@ -642,6 +642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 653894708}
   - component: {fileID: 653894707}
+  - component: {fileID: 653894709}
   m_Layer: 0
   m_Name: pipo-enemy050b
   m_TagString: Untagged
@@ -723,6 +724,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653894709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653894705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb51149c0cab4b4392868801feb4bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  targetRunes: 000000000200000001000000
+  runeSize: 0.2
+  runeSpacing: 0.7
+  runeVerticalPositionOffset: 2
+  appearanceDelay: 1
+  attackDelay: 1
+  doesAttack: 0
 --- !u!1 &859088178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,13 +1227,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66c5de5ccf16f44daf1a64c0ff71459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CarouselController
-  levelRunes: 00000000010000000200000003000000040000000500000006000000070000000800000009000000
+  levelRunes: 0000000001000000020000000300000004000000050000000600000007000000
   runeSpawnPoint: {x: 7.75, y: -3.75}
   runeSpawnInterval: 1
   runeMoveSpeed: 2
-  Enemies: []
-  runePrefab: {fileID: 1659823809330205313, guid: 31372c30e97e8624ca23d364fdd256dd, type: 3}
   runesPerRotation: 10
+  selectionPoint: {x: 0, y: -3.75}
+  runeDisplayCenter: {x: 0, y: -0.5}
+  runeSize: 0.3
+  runeSpacing: 1
+  castSpellDelay: 1
+  enemies:
+  - {fileID: 584174407}
+  - {fileID: 653894705}
+  - {fileID: 1682005276}
+  runePrefab: {fileID: 1659823809330205313, guid: 31372c30e97e8624ca23d364fdd256dd, type: 3}
 --- !u!4 &1323001192
 Transform:
   m_ObjectHideFlags: 0
@@ -1426,6 +1454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682005279}
   - component: {fileID: 1682005278}
+  - component: {fileID: 1682005280}
   m_Layer: 0
   m_Name: pipo-enemy050
   m_TagString: Untagged
@@ -1507,6 +1536,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682005280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682005276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb51149c0cab4b4392868801feb4bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  targetRunes: 050000000200000003000000
+  runeSize: 0.2
+  runeSpacing: 0.7
+  runeVerticalPositionOffset: 2
+  appearanceDelay: 1
+  attackDelay: 1
+  doesAttack: 0
 --- !u!1 &2009485108
 GameObject:
   m_ObjectHideFlags: 0
