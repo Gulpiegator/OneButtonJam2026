@@ -16,7 +16,7 @@ public class CarouselController : MonoBehaviour
     [SerializeField] private Vector2 runeDisplayCenter;
     [SerializeField] private float runeSize = 0.4f;
     [SerializeField] private float runeSpacing = 0.8f;
-    [SerializeField] private float castSpellDelay = 1f;
+    private float castSpellDelay;
 
     [Header("Drag Settings")]
     [SerializeField] private GameObject[] enemies;
@@ -33,29 +33,16 @@ public class CarouselController : MonoBehaviour
     private bool spellQueued;
     private float spellCastTimer;
     private bool input;
-    private int remainingEnemyCount;
+    private int remainingEnemyCount = 0;
 
     void Start()
     {
-        // Goes through each enemy and adds their runes to a list and converts to array
-        var tempRunesList = new List<int>();
-        foreach (var enemyObject in enemies)
-        {
-            var enemyScript = enemyObject.GetComponent<Enemy>();
-            tempRunesList.AddRange(enemyScript.targetRunes);
-        }
+        castSpellDelay = .1f;
+        enemyRunes = GatherUniqueEnemyRunes();
 
-        enemyRunes = tempRunesList.ToArray();
         requiredRuneCount = enemies[0].GetComponent<Enemy>().targetRunes.Length;
+
         selectedRunes = new List<int>(requiredRuneCount);
-        remainingEnemyCount = 0;
-        foreach (var enemyObject in enemies)
-        {
-            if (enemyObject != null)
-            {
-                remainingEnemyCount++;
-            }
-        }
         CreateSelectedRuneDisplay();
         CreateNewRotation();
     }
@@ -96,6 +83,29 @@ public class CarouselController : MonoBehaviour
     public void OnPressSpacebar(InputAction.CallbackContext context)
     {
         input = context.ReadValue<float>() > 0.5f;
+    }
+
+    private int[] GatherUniqueEnemyRunes()
+    {
+        var uniqueRunes = new List<int>();
+        var seenRunes = new HashSet<int>();
+
+        foreach (var enemyObject in enemies)
+        {
+            remainingEnemyCount++;
+
+            var enemyScript = enemyObject.GetComponent<Enemy>();
+
+            foreach (var runeType in enemyScript.targetRunes)
+            {
+                if (seenRunes.Add(runeType))
+                {
+                    uniqueRunes.Add(runeType);
+                }
+            }
+        }
+
+        return uniqueRunes.ToArray();
     }
 
     private void CreateSelectedRuneDisplay()

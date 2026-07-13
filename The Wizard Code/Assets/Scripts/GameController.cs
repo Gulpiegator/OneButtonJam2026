@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void LevelWin()

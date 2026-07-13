@@ -65,7 +65,10 @@ public class Enemy : MonoBehaviour
                 hasAppeared = true;
                 spriteRenderer.enabled = true;
                 SetRuneSpritesVisible(true);
-                SetAttackBarVisible(true);
+                if(doesAttack)
+                {
+                    SetAttackBarVisible(true);
+                }
             }
         }
         else
