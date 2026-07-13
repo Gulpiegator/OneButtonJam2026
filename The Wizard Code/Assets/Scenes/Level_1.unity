@@ -556,8 +556,12 @@ MonoBehaviour:
   runeSpacing: 0.7
   runeVerticalPositionOffset: 2
   appearanceDelay: 1
-  attackDelay: 1
-  doesAttack: 0
+  attackDelay: 20
+  doesAttack: 1
+  attackBarWidth: 2.25
+  attackBarHeight: 0.2
+  attackBarVerticalPositionOffset: 2.75
+  attackBarColor: {r: 0.5176471, g: 0.12156861, b: 0.17022339, a: 1}
 --- !u!212 &584174409
 SpriteRenderer:
   serializedVersion: 2
@@ -743,6 +747,10 @@ MonoBehaviour:
   appearanceDelay: 1
   attackDelay: 1
   doesAttack: 0
+  attackBarWidth: 0.8
+  attackBarHeight: 0.08
+  attackBarVerticalPositionOffset: 0.35
+  attackBarColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &859088178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1563,10 @@ MonoBehaviour:
   appearanceDelay: 1
   attackDelay: 1
   doesAttack: 0
+  attackBarWidth: 0.8
+  attackBarHeight: 0.08
+  attackBarVerticalPositionOffset: 0.35
+  attackBarColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &2009485108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,7 +1658,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1001 &2063381426
+--- !u!1001 &4753309691577412691
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1657,14 +1669,6 @@ PrefabInstance:
     - target: {fileID: 3003938952076966529, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
       propertyPath: m_Name
       value: GameController
-      objectReference: {fileID: 0}
-    - target: {fileID: 3174759247672154291, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4981439451320305505, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6876141336941377488, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1706,15 +1710,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7981249212356571293, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 9027962147872975655, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 4753309691577412692}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+--- !u!1 &4753309691577412692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 895758739920914676, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+  m_PrefabInstance: {fileID: 4753309691577412691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1724,4 +1733,4 @@ SceneRoots:
   - {fileID: 1682005279}
   - {fileID: 653894708}
   - {fileID: 584174410}
-  - {fileID: 2063381426}
+  - {fileID: 4753309691577412691}

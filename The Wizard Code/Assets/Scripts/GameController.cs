@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance;
     public Sprite[] runesSprites;
+    public GameObject winText;
 
     #region Input Managment
     public static CharacterController Controller;
@@ -56,5 +57,16 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(fadeDuration);
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    public void LevelWin()
+    {
+        winText.SetActive(true);
+        sceneChangeEnabled = true;
     }
 }

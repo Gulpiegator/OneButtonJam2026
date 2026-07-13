@@ -33,6 +33,7 @@ public class CarouselController : MonoBehaviour
     private bool spellQueued;
     private float spellCastTimer;
     private bool input;
+    private int remainingEnemyCount;
 
     void Start()
     {
@@ -47,12 +48,25 @@ public class CarouselController : MonoBehaviour
         enemyRunes = tempRunesList.ToArray();
         requiredRuneCount = enemies[0].GetComponent<Enemy>().targetRunes.Length;
         selectedRunes = new List<int>(requiredRuneCount);
+        remainingEnemyCount = 0;
+        foreach (var enemyObject in enemies)
+        {
+            if (enemyObject != null)
+            {
+                remainingEnemyCount++;
+            }
+        }
         CreateSelectedRuneDisplay();
         CreateNewRotation();
     }
 
     void Update()
     {
+        if (GameController.Instance.sceneChangeEnabled)
+        {
+            Destroy(gameObject);
+        }
+
         // Timer for spawning runes
         runeSpawnTimer += Time.deltaTime;
         if (runeSpawnTimer >= runeSpawnInterval)
@@ -297,6 +311,16 @@ public class CarouselController : MonoBehaviour
         if (enemyObject != null)
         {
             Destroy(enemyObject);
+        }
+
+        if (remainingEnemyCount > 0)
+        {
+            remainingEnemyCount--;
+        }
+
+        if (remainingEnemyCount <= 0)
+        {
+            GameController.Instance.LevelWin();
         }
     }
 }

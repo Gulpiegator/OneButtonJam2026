@@ -17,6 +17,11 @@ public class Rune : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameController.Instance.sceneChangeEnabled)
+        {
+            Destroy(gameObject);
+        }
+        
         if(runeType != -1 && !spriteSet) // Checks that runeType is given and sprite isn't already set
         {
             spriteRenderer.sprite = GameController.Instance.runesSprites[runeType]; // Set sprite from GameController list
