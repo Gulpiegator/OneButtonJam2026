@@ -1801,21 +1801,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9027962147872975655, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
-      propertyPath: winText
+      propertyPath: winSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 736dfcfa53c884645a5c9922bc42ec55, type: 3}
+    - target: {fileID: 9027962147872975655, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+      propertyPath: loseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e483a82c7b2acc48a63578c69816bad, type: 3}
+    - target: {fileID: 9027962147872975655, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+      propertyPath: audioSource
       value: 
       objectReference: {fileID: 4753309691577412692}
     - target: {fileID: 9027962147872975655, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
       propertyPath: nextSceneName
       value: Level_3
       objectReference: {fileID: 0}
+    - target: {fileID: 9027962147872975655, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+      propertyPath: spellCastSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 438ee32d797a1b04fbf4b2bcae8192f0, type: 3}
+    - target: {fileID: 9027962147872975655, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 7dc02761330d9434fb26a7c7c2305acf, type: 3}
+    - target: {fileID: 9027962147872975655, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+      propertyPath: runeSelectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9cb0ad0c27de3704f9a8e8d9b3fd4752, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
---- !u!1 &4753309691577412692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 895758739920914676, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
+--- !u!82 &4753309691577412692 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5721764904689957522, guid: 8b2e1fc4f2843714c83e9e54b106e766, type: 3}
   m_PrefabInstance: {fileID: 4753309691577412691}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

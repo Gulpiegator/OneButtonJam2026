@@ -226,6 +226,7 @@ public class CarouselController : MonoBehaviour
         {
             selectedRunes.Add(runeAtSelection.runeType);
             RefreshSelectedRuneDisplay();
+            GameController.Instance.PlayRuneSelectSound();
             Destroy(runeAtSelection.gameObject);
         }
 
@@ -271,6 +272,8 @@ public class CarouselController : MonoBehaviour
             return;
         }
 
+        GameController.Instance.PlaySpellCastSound();
+        
         CompareSpell();
         selectedRunes.Clear();
         RefreshSelectedRuneDisplay();
